@@ -48,13 +48,11 @@ AFRAME.registerComponent("button", {
   },
 
   stateChanged: function () {
-    var color = this.el.is("pressed") ? "green" : this.color;
     this.el.setAttribute("material", { color: color });
   },
 
   onPressedStarted: function () {
     var el = this.el;
-    el.setAttribute("material", { color: "green" });
     el.emit("click");
     if (this.data.togabble) {
       if (el.is("pressed")) {
